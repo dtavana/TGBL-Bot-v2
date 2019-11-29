@@ -1,7 +1,7 @@
 {
   "name": "tgbl-bot",
   "version": "0.1.0",
-  "description": "Bot to use the TGBL API",
+  "description": "Bot to use the TGBL Service",
   "scripts": {
     "build": "npm run lint && rm -rf dist && tsc",
     "build:dev": "rm -rf dist && tsc",
@@ -13,7 +13,10 @@
   "license": "MIT",
   "dependencies": {
     "@types/node": "^12.7.5",
+    "async-redis": "^1.1.7",
     "axios": "^0.19.0",
+    "discord-akairo": "github:discord-akairo/discord-akairo",
+    "discord.js": "github:discordjs/discord.js",
     "dotenv": "^8.1.0",
     "pg-promise": "^9.2.0",
     "winston": "^3.2.1"
