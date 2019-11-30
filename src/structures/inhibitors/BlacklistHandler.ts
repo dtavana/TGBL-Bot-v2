@@ -10,8 +10,9 @@ export default class BlacklistInhibitor extends Inhibitor {
     }
 
     public async exec(message: Message) {
-        const id = message.guild?.id;
-        const blacklist = JSON.parse(await this.client.settings.get(id, SETTINGS.BLACKLIST));
-        return blacklist.includes(message.author.id);
+        if(message.guild) {
+            const blacklist = JSON.parse(await this.client.settings.get(message.guild, SETTINGS.BLACKLIST));
+            return blacklist.includes(message.author.id);
+        }
     }
 }
